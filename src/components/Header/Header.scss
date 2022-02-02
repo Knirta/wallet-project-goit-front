@@ -42,6 +42,7 @@
   display: flex;
   color: #bdbdbd;
   font-size: 18px;
+  font-family: Circe, sans-serif;
   height: 30px;
   line-height: 30px;
 }
@@ -65,7 +66,6 @@
 
 .Header__logout-text {
   padding-left: 10px;
-  font-family: "Circe";
 
   @media screen and (max-width: $MaxMobileWidth) {
     display: none;

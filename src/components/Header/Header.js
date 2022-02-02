@@ -22,6 +22,7 @@ const Header = () => {
   const logOut = (e) => {
     dispatch(authOperations.logOut());
   };
+  
   return (
     <header className="Header">
       <Link to="/home" className="Header__link">

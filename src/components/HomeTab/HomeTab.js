@@ -14,12 +14,15 @@ import {
 import { HomeTabMobile } from "./HomeTabMobile";
 import ModalAddTransaction from "../ModalAddTransaction";
 import NoTransaction from "../NoTransaction";
+import Loader from '../Loader'
 
 import "./homeTab.scss";
 
 const HomeTab = () => {
   const columns = useMemo(() => COLUMNS, []);
   const data = useSelector(transactionsSelectors.getTransactions);
+  const isLoading = useSelector(transactionsSelectors.getIsLoading);
+  console.log(data);
 
   const dispatch = useDispatch();
   const {
@@ -51,7 +54,8 @@ const HomeTab = () => {
   useEffect(() => {
     dispatch(transactionsOperations.fetchTransactions());
   }, [dispatch]);
-  return (
+  
+  return ( isLoading ? <Loader /> : (
     <>
       {data.length > 0 ? (
         <>
@@ -163,7 +167,7 @@ const HomeTab = () => {
       )}
       <ModalAddTransaction />{" "}
     </>
-  );
+  ));
 };
 
 export default HomeTab;

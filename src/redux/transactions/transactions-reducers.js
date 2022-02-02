@@ -20,16 +20,16 @@ const items = createReducer([], {
   [addTransaction.fulfilled]: (state, { payload }) => [payload, ...state],
 });
 
-const isLoading = createReducer(false, {
+const isLoading = createReducer(true, {
   [fetchTransactions.pending]: () => true,
   [fetchTransactions.fulfilled]: () => false,
   [fetchTransactions.rejected]: () => false,
-  [addTransaction.pending]: () => true,
-  [addTransaction.fulfilled]: () => false,
-  [addTransaction.rejected]: () => false,
-  [getTransactionDate.pending]: () => true,
-  [getTransactionDate.fulfilled]: () => false,
-  [getTransactionDate.rejected]: () => false,
+  // [addTransaction.pending]: () => true,
+  // [addTransaction.fulfilled]: () => false,
+  // [addTransaction.rejected]: () => false,
+  // [getTransactionDate.pending]: () => true,
+  // [getTransactionDate.fulfilled]: () => false,
+  // [getTransactionDate.rejected]: () => false,
 });
 
 const error = createReducer(null, {

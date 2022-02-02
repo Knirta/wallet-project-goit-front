@@ -40,9 +40,16 @@ const isAuthenticated = createReducer(false, {
   [getCurrentUser.fulfilled]: () => true,
 });
 
+const isFetchingCurrentUser = createReducer(false, {
+  [getCurrentUser.pending]: () => true,
+  [getCurrentUser.fulfilled]: () => false,
+  [getCurrentUser.rejected]: () => false,
+});
+
 export default combineReducers({
   user,
   isAuthenticated,
+  isFetchingCurrentUser,
   refresh_token,
   access_token,
   error,
